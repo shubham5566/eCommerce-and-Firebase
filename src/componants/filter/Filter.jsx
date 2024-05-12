@@ -3,7 +3,7 @@ import MyContext from '../../context/data/MyContex'
 
 function Filter() {
     const context = useContext(MyContext)
-    const {mode,toggleMode}  = context
+    const {mode}  = context
   return (
     <div>
            <div className=' container mx-auto px-4 mt-5 '>
