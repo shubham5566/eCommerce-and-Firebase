@@ -8,8 +8,7 @@ function Home() {
   const {name , std } =  context
   return (
     <Layout>  
-      <h1>name:{name}</h1>
-      <h1>class:{std}</h1>
+      home
       
     </Layout>
   )
