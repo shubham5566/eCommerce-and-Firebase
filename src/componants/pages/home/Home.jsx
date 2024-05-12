@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import Layout from '../../layout/Layout'
 import MyContext from '../../../context/data/MyContex'
+import HerosSection from '../../herosSection/HerosSection'
+import Filter from '../../filter/Filter'
 
 function Home() {
   const context =useContext(MyContext)
@@ -8,7 +10,8 @@ function Home() {
   const {name , std } =  context
   return (
     <Layout>  
-      home
+      <HerosSection/>
+      <Filter/>
       
     </Layout>
   )
