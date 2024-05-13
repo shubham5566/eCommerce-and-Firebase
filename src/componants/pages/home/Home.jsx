@@ -5,6 +5,7 @@ import HerosSection from '../../herosSection/HerosSection'
 import Filter from '../../filter/Filter'
 import ProductCard from '../../productCard/ProductCard'
 import Tracks from '../../tracks/Tracks'
+import Testimonial from '../../testimonial/Testimonial'
 
 function Home() {
   const context =useContext(MyContext)
@@ -16,6 +17,7 @@ function Home() {
       <Filter/>
       <ProductCard/>
       <Tracks/>
+      <Testimonial/>
       
     </Layout>
   )
