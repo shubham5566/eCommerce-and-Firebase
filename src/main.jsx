@@ -6,6 +6,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import { Admin, AllProduct, Home, NoPage, Order } from './componants/pages/index.js'
 import Cart from './componants/pages/cart/Cart.jsx'
 import MyState from './context/data/MyState.jsx'
+import Login from './componants/registretion/Login.jsx'
+import SignUp from './componants/registretion/SignUp.jsx'
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
     {
       path: '*',
       element: <NoPage/>,
+    },
+    {
+      path: '/login',
+      element: <Login/>,
+    },
+    {
+      path: '/signup',
+      element: <SignUp/>,
     },
     
 ])
