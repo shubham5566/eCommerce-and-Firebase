@@ -4,6 +4,7 @@ import MyContext from '../../../context/data/MyContex'
 import HerosSection from '../../herosSection/HerosSection'
 import Filter from '../../filter/Filter'
 import ProductCard from '../../productCard/ProductCard'
+import Tracks from '../../tracks/Tracks'
 
 function Home() {
   const context =useContext(MyContext)
@@ -14,6 +15,7 @@ function Home() {
       <HerosSection/>
       <Filter/>
       <ProductCard/>
+      <Tracks/>
       
     </Layout>
   )
