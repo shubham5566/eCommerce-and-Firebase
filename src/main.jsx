@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
-import { Admin, AllProduct, Home, NoPage, Order } from './componants/pages/index.js'
+import { Admin, AllProduct, Home, NoPage, Order, ProductInfo } from './componants/pages/index.js'
 import Cart from './componants/pages/cart/Cart.jsx'
 import MyState from './context/data/MyState.jsx'
 import Login from './componants/registretion/Login.jsx'
@@ -51,6 +51,10 @@ const router = createBrowserRouter([
     {
       path: '/signup',
       element: <SignUp/>,
+    },
+    {
+      path: '/productInfo/:id',
+      element: <ProductInfo/>,
     },
     
 ])

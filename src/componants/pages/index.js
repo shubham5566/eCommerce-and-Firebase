@@ -6,5 +6,5 @@ import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import Order from "./order/Order";
 import NoPage from "./noPage/NoPage";
-
-export {Home,Footer,Layout,Navbar,Admin, AllProduct,NoPage,Order}
+import ProductInfo from "./productInfo/ProductInfo";
+export {Home,Footer,Layout,Navbar,Admin, AllProduct,NoPage,Order,ProductInfo}
