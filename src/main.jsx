@@ -8,6 +8,8 @@ import Cart from './componants/pages/cart/Cart.jsx'
 import MyState from './context/data/MyState.jsx'
 import Login from './componants/registretion/Login.jsx'
 import SignUp from './componants/registretion/SignUp.jsx'
+import AddProduct from './componants/pages/admin/pages/AddProduct.jsx'
+import UpdateProduct from './componants/pages/admin/pages/UpdateProduct.jsx'
 
 const router = createBrowserRouter([
   {
@@ -55,6 +57,14 @@ const router = createBrowserRouter([
     {
       path: '/productInfo/:id',
       element: <ProductInfo/>,
+    },
+    {
+      path: '/addProduct',
+      element: <AddProduct/>,
+    },
+    {
+      path: '/updateProduct',
+      element: <UpdateProduct/>,
     },
     
 ])
