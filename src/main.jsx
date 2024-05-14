@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
-import { Admin, AllProduct, Home, NoPage, Order } from './componants/pages/index.js'
+import {  AllProduct, Dashboard, Home, NoPage, Order, ProductInfo } from './componants/pages/index.js'
 import Cart from './componants/pages/cart/Cart.jsx'
 import MyState from './context/data/MyState.jsx'
 import Login from './componants/registretion/Login.jsx'
 import SignUp from './componants/registretion/SignUp.jsx'
+import AddProduct from './componants/pages/admin/pages/AddProduct.jsx'
+import UpdateProduct from './componants/pages/admin/pages/UpdateProduct.jsx'
 
 const router = createBrowserRouter([
   {
@@ -29,8 +31,8 @@ const router = createBrowserRouter([
       element: <Order/>,
     },
     {
-      path: '/admin',
-      element: <Admin/>,
+      path: '/dashboard',
+      element: <Dashboard/>,
     },
     {
       path: '/cart',
@@ -51,6 +53,18 @@ const router = createBrowserRouter([
     {
       path: '/signup',
       element: <SignUp/>,
+    },
+    {
+      path: '/productInfo/:id',
+      element: <ProductInfo/>,
+    },
+    {
+      path: '/addProduct',
+      element: <AddProduct/>,
+    },
+    {
+      path: '/updateProduct',
+      element: <UpdateProduct/>,
     },
     
 ])
