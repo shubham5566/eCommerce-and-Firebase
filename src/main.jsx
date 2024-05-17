@@ -10,6 +10,9 @@ import Login from './componants/registretion/Login.jsx'
 import SignUp from './componants/registretion/SignUp.jsx'
 import AddProduct from './componants/pages/admin/pages/AddProduct.jsx'
 import UpdateProduct from './componants/pages/admin/pages/UpdateProduct.jsx'
+import { Provider } from 'react-redux'
+import { store } from './store/Store.jsx'
+
 
 const router = createBrowserRouter([
   {
@@ -71,8 +74,11 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <MyState>
+      <Provider store={store} >
 
         <RouterProvider router={router} />
+      </Provider>
+
     </MyState>
 
   </React.StrictMode>,
