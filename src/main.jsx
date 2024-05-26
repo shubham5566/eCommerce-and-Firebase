@@ -12,6 +12,8 @@ import AddProduct from './componants/pages/admin/pages/AddProduct.jsx'
 import UpdateProduct from './componants/pages/admin/pages/UpdateProduct.jsx'
 import { Provider } from 'react-redux'
 import { store } from './store/Store.jsx'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const router = createBrowserRouter([
@@ -77,6 +79,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Provider store={store} >
 
         <RouterProvider router={router} />
+        <ToastContainer/>
       </Provider>
 
     </MyState>
