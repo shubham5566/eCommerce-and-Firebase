@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { auth, fireDB } from "../../firebase/FirebaseConfig";
 import { Timestamp, addDoc, collection } from "firebase/firestore";
@@ -13,6 +13,7 @@ function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const {loading,setLoading} =useContext(MyContext)
+  const navigate =useNavigate()
   
   const signUp = async () => {
     if (name === "" || password === "" || email === "") {
@@ -30,6 +31,7 @@ function SignUp() {
     const userRef =collection(fireDB,"users")
     setLoading(true)
     await addDoc(userRef,user)
+    navigate("/login")
     toast.success("Signup Succesfully")
             setName("");
             setEmail("");
