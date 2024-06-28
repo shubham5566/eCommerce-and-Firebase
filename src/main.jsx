@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { Children } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom"
 import {  AllProduct, Dashboard, Home, NoPage, Order, ProductInfo } from './componants/pages/index.js'
 import Cart from './componants/pages/cart/Cart.jsx'
 import MyState from './context/data/MyState.jsx'
@@ -14,6 +14,10 @@ import { Provider } from 'react-redux'
 import { store } from './store/Store.jsx'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { ProtectedRoute, ProtectedRoutesForAdmin } from './protected route/ProtectedRoute.jsx'
+
+
+
 
 
 const router = createBrowserRouter([
@@ -33,11 +37,17 @@ const router = createBrowserRouter([
 
     {
       path: '/order',
-      element: <Order/>,
+      element:(<ProtectedRoute>
+        
+        <Order/>
+        </ProtectedRoute>)
+      
     },
     {
       path: '/dashboard',
-      element: <Dashboard/>,
+      element: (<ProtectedRoutesForAdmin>
+        <Dashboard/>
+      </ProtectedRoutesForAdmin>)
     },
     {
       path: '/cart',
@@ -65,14 +75,20 @@ const router = createBrowserRouter([
     },
     {
       path: '/addProduct',
-      element: <AddProduct/>,
+      element: 
+      (<ProtectedRoutesForAdmin>
+        <AddProduct/>
+      </ProtectedRoutesForAdmin>),
     },
     {
       path: '/updateProduct',
-      element: <UpdateProduct/>,
+      element: (<ProtectedRoutesForAdmin>
+        <UpdateProduct/>
+      </ProtectedRoutesForAdmin>),
     },
     
 ])
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <MyState>

@@ -8,6 +8,9 @@ import MyContext from "../../../../context/data/MyContex";
 function DashboardTab() {
     const context = useContext(MyContext)
     const {mode} = context
+    const add = ()=>{
+      window.location.href = '/addproduct'
+    }
   return (
     <div>
       <div className="container mx-auto">
@@ -63,6 +66,7 @@ function DashboardTab() {
                       backgroundColor: mode === "dark" ? "rgb(46 49 55)" : "",
                       color: mode === "dark" ? "white" : "",
                     }}
+                    onClick={add}
                   >
                     {" "}
                     <div className="flex gap-2 items-center">
